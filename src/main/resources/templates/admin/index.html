@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="admin/_fragments :: head(~{::title})">
+  <title>博客管理</title>
+</head>
+
+<body>
+
+  <!--头部导航-->
+  <nav th:replace="admin/_fragments :: menu(0)"></nav>
+
+
+  <!--中间内容-->
+  <div  class="m-container-small m-padded-tb-big">
+    <div class="ui container">
+      <div class="ui success large  message">
+        <h3>Hi</h3>
+        <p th:text="${session.user.nickname}">,欢迎登录</p>
+      </div>
+
+      <!--登录成功图片-->
+      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595825304994&di=1c68efa390807052bdf4d737368588d0&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2Fa686c9177f3e670945d45b333dc79f3df9dc5521.jpg"} alt="" class="ui rounded bordered fluid image">
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <!--底部footer-->
+  <footer th:replace="admin/_fragments :: footer">
+
+  </footer>
+
+
+  <th:block th:replace="admin/_fragments :: script">
+
+  </th:block>
+
+  <script>
+    $('.menu.toggle').click(function () {
+      $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('.ui.dropdown').dropdown({
+      on : 'hover'
+    });
+
+  </script>
+</body>
+</html>
